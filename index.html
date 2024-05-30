@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor Contact Form</title>
+  </head>
+  <body>
+    <div class="contact_us">
+      <h1>Contact Us</h1>
+
+      <form action="#" onsubmit="return validateForm()">
+        <div class="first_name">
+          <label>First Name *</label>
+          <input id="first_name" type="text" name="name" />
+        </div>
+
+        <div class="last_name">
+          <label>Last Name *</label>
+          <input id="last_name" type="text" name="name" />
+        </div>
+
+        <div class="email_address">
+          <label>Email Address *</label>
+          <input id="email" type="email" name="email" />
+        </div>
+
+        <div class="query_type">
+          <label>Query Type *</label>
+          <div id="radio" class="radio">
+            <input
+              type="radio"
+              id="General Enquiry"
+              name="fav_language"
+              value="General Enquiry"
+            />
+            <label for="General Enquiry"> General Enquiry </label>
+          </div>
+          <div class="radio" id="radio2">
+            <input
+              type="radio"
+              id="Support Request"
+              name="fav_language"
+              value="Support Request"
+            />
+            <label for="Support Request"> Support Request </label>
+          </div>
+        </div>
+
+        <div class="message">
+          <label>Message *</label>
+          <input id="message" type="text" name="message" />
+        </div>
+
+        <div class="check_box">
+          <input id="checkbox" type="checkbox" />
+          <p>I consent to being contacted by the team *</p>
+        </div>
+
+        <button id="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        let firstName = document.getElementById("first_name").value;
+        let lastName = document.getElementById("last_name").value;
+        let email1 = document.getElementById("email").value;
+        let radio1 = document.getElementsByClassName("radio").checked;
+        let message1 = document.getElementById("message").value;
+        let radio3 = document.getElementById("radio2");
+        let checkbox = document.getElementById("checkbox").checked;
+
+        if (firstName == "") {
+          first_name.style.border = "2px solid red";
+          last_name.style.border = "2px solid red";
+          email.style.border = "2px solid red";
+          radio.style.border = "2px solid red";
+          radio2.style.border = "2px solid red";
+          message.style.border = "2px solid red";
+
+          return false;
+        } else {
+          alert("Your message send succesfuly");
+        }
+      }
+    </script>
+  </body>
+</html>
